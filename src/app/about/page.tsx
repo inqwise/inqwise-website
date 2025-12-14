@@ -1,5 +1,4 @@
 import Navigation from "@/components/sections/navigation";
-import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -8,6 +7,7 @@ export default function AboutPage() {
       
       <section className="container py-16">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          {/* Header: "our expertise" */}
           <div className="mb-16">
             <h1 className="text-5xl font-bold mb-8">
               our<span className="italic">expertise</span>
@@ -21,9 +21,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* DevFinOps Section */}
+          <div className="mb-12 text-left w-full">
             <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">DevFinOps</h2>
-            <div className="text-left space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
                 The DevFinOps methodology is built upon the following key principles: maximum automation, small 
                 development teams, and non-trivial architectural solutions. DevFinOps involves continuous interaction with the 
@@ -72,9 +73,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* Fintech Section */}
+          <div className="mb-12 text-left w-full">
             <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Fintech</h2>
-            <div className="text-left text-gray-700 leading-relaxed">
+            <div className="text-gray-700 leading-relaxed">
               <p>
                 From 2015 to 2023, a product was developed: a multilevel computing system that integrates the roles of 
                 employer, accountant, and employee. The project operates online and has no analogs on the market. Data was 
@@ -86,9 +88,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* Video Ads Section */}
+          <div className="mb-12 text-left w-full">
             <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Video Ads</h2>
-            <div className="text-left text-gray-700 leading-relaxed">
+            <div className="text-gray-700 leading-relaxed">
               <h3 className="font-bold mb-2">Experience in Video Advertising:</h3>
               <p>
                 The project collects and analyzes data on viewed advertisements, with the capability to process over a million 
@@ -97,9 +100,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* Digital Surveys Section */}
+          <div className="mb-12 text-left w-full">
             <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Digital Surveys</h2>
-            <div className="text-left text-gray-700 leading-relaxed">
+            <div className="text-gray-700 leading-relaxed">
               <p>
                 As part of our digital survey system project, we developed a solution capable of processing large volumes of 
                 data. The platform efficiently collects and analyzes information from various types of surveys while supporting 
@@ -110,9 +114,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* Compliance and Security Section */}
+          <div className="mb-12 text-left w-full">
             <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Compliance and Security</h2>
-            <div className="text-left text-gray-700 leading-relaxed">
+            <div className="text-gray-700 leading-relaxed">
               <p>
                 At Inqwise, we strictly adhere to the Zero Trust concept, allowing us to ensure the highest level of security for all 
                 our clients. We follow leading industry standards, guaranteeing that your sensitive data is protected at all stages 
@@ -122,7 +127,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-16">
+          {/* Professionalism Section with Icon */}
+          <div className="mb-16 w-full">
             <div className="relative w-64 h-32 mx-auto mb-8">
               <svg viewBox="0 0 300 120" className="w-full h-full">
                 <circle cx="150" cy="30" r="20" fill="none" stroke="#DC2626" strokeWidth="4"/>
@@ -147,7 +153,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mb-16">
+          {/* Creativity Section with Icon */}
+          <div className="mb-16 w-full">
             <div className="relative w-64 h-32 mx-auto mb-8">
               <svg viewBox="0 0 200 120" className="w-full h-full">
                 <path d="M 100 20 Q 80 60, 100 100 Q 120 60, 100 20" 
