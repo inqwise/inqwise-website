@@ -141,22 +141,22 @@ export default function AboutPage() {
       </section>
 
       {/* Professionalism Section with Icon */}
-      <section className="w-full py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="w-full bg-black text-white py-16">
+        <div className="max-w-4xl mx-auto text-center px-4">
           <div className="relative w-64 h-32 mx-auto mb-8">
             <svg viewBox="0 0 300 120" className="w-full h-full">
               <circle cx="150" cy="30" r="20" fill="none" stroke="#DC2626" strokeWidth="4"/>
               <circle cx="150" cy="30" r="8" fill="#DC2626"/>
               <path d="M 150 50 Q 130 70, 120 100 M 150 50 Q 170 70, 180 100" 
-                    fill="none" stroke="black" strokeWidth="4"/>
-              <line x1="120" y1="100" x2="105" y2="120" stroke="black" strokeWidth="4"/>
-              <line x1="120" y1="100" x2="135" y2="120" stroke="black" strokeWidth="4"/>
-              <line x1="180" y1="100" x2="165" y2="120" stroke="black" strokeWidth="4"/>
-              <line x1="180" y1="100" x2="195" y2="120" stroke="black" strokeWidth="4"/>
+                    fill="none" stroke="white" strokeWidth="4"/>
+              <line x1="120" y1="100" x2="105" y2="120" stroke="white" strokeWidth="4"/>
+              <line x1="120" y1="100" x2="135" y2="120" stroke="white" strokeWidth="4"/>
+              <line x1="180" y1="100" x2="165" y2="120" stroke="white" strokeWidth="4"/>
+              <line x1="180" y1="100" x2="195" y2="120" stroke="white" strokeWidth="4"/>
             </svg>
           </div>
           <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
-          <div className="bg-black text-white p-8 rounded-lg text-left">
+          <div className="text-left">
             <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               We possess a high level of expertise and extensive experience in the field of high technology, including architecture, 
               design, construction, deployment, support, and system upgrades. We offer a full range of services, ensuring 
@@ -169,8 +169,8 @@ export default function AboutPage() {
       </section>
 
       {/* Creativity Section with Icon */}
-      <section className="w-full py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="w-full bg-[#2B3990] text-white py-16">
+        <div className="max-w-4xl mx-auto text-center px-4">
           <div className="relative w-64 h-32 mx-auto mb-8">
             <svg viewBox="0 0 200 120" className="w-full h-full">
               <path d="M 100 20 Q 80 60, 100 100 Q 120 60, 100 20" 
@@ -179,7 +179,7 @@ export default function AboutPage() {
             </svg>
           </div>
           <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>crea<span className="text-[#DC2626] italic">t</span>ivity</h2>
-          <div className="bg-[#2B3990] text-white p-8 rounded-lg text-left">
+          <div className="text-left">
             <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
               An unconventional approach to solving the most challenging tasks. Development and search for alternative 
               and non-obvious solutions to implement the most 'impossible' projects. Creation of innovative, unique, and high-tech 
