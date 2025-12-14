@@ -1,5 +1,4 @@
 import Navigation from "@/components/sections/navigation";
-import Image from "next/image";
 
 export default function ServicesPage() {
   return (
@@ -12,15 +11,7 @@ export default function ServicesPage() {
           <div className="mb-12">
             <div className="flex items-center justify-center gap-4 mb-8">
               <h1 className="text-6xl font-bold">
-                our<span className="relative inline-block ml-[-10px]">
-                  <Image 
-                    src="/services-header-circuit.png" 
-                    alt="Circuit board heart" 
-                    width={120} 
-                    height={100}
-                    className="inline-block"
-                  />
-                </span>services
+                our services
               </h1>
             </div>
             <p className="text-lg text-[#DC2626] font-semibold">
