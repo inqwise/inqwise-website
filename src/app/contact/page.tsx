@@ -61,7 +61,7 @@ export default function ContactPage() {
 
         {/* Footer */}
         <footer className="mt-24 text-center text-sm text-gray-600">
-          <p>© 2024 by Inqwise. Powered and secured by Wix</p>
+          <p>© 2025 by Inqwise.</p>
         </footer>
       </section>
 
