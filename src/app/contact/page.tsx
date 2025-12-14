@@ -4,28 +4,69 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       <Navigation />
+      
       <section className="container py-16">
-        <h1 className="text-4xl font-bold text-[var(--color-primary-blue)]">Contact Us</h1>
-        <div className="mt-4 h-1 w-16 bg-[var(--color-accent-red)]" />
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg border border-[var(--color-border-gray)] p-6 bg-white">
-            <h3 className="text-lg font-semibold text-[var(--color-accent-red)]">Address</h3>
-            <p className="mt-2 text-[var(--color-dark-gray)]">123 Innovation Way<br/>Tech City, World</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left Side - Get in Touch */}
+          <div className="bg-black text-white p-12 rounded-lg flex flex-col justify-between min-h-[500px]">
+            <div>
+              <h1 className="text-4xl font-bold text-[#DC2626] mb-16">Get in Touch</h1>
+              
+              <div className="space-y-8 mt-auto">
+                <div>
+                  <p className="text-gray-300 text-sm mb-1">Address:</p>
+                  <p className="text-white font-medium">Bat Yam ISR</p>
+                </div>
+                
+                <div>
+                  <p className="text-gray-300 text-sm mb-1">Email:</p>
+                  <p className="text-white font-medium">contacts@inqwise.com</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="rounded-lg border border-[var(--color-border-gray)] p-6 bg-white">
-            <h3 className="text-lg font-semibold text-[var(--color-accent-red)]">Contact channels</h3>
-            <ul className="mt-2 space-y-2 text-[var(--color-primary-blue)]">
-              <li><a href="#" className="hover:underline">Discord</a></li>
-              <li><a href="#" className="hover:underline">LinkedIn</a></li>
-              <li><a href="#" className="hover:underline">GitHub</a></li>
-            </ul>
-          </div>
-          <div className="rounded-lg border border-[var(--color-border-gray)] p-6 bg-white">
-            <h3 className="text-lg font-semibold text-[var(--color-accent-red)]">Email</h3>
-            <p className="mt-2 text-[var(--color-dark-gray)]">contacts@inqwise.com</p>
+
+          {/* Right Side - Contact Channels */}
+          <div className="flex flex-col justify-start pt-12">
+            <h2 className="text-4xl font-bold text-[#DC2626] mb-12">Contact channels</h2>
+            
+            <div className="space-y-6">
+              <a 
+                href="https://discord.gg/inqwise" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-2xl text-[#2B3990] hover:text-[#DC2626] transition-colors underline"
+              >
+                Discord
+              </a>
+              <a 
+                href="https://linkedin.com/company/inqwise" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-2xl text-[#2B3990] hover:text-[#DC2626] transition-colors underline"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="https://github.com/inqwise" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-2xl text-[#2B3990] hover:text-[#DC2626] transition-colors underline"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="mt-24 text-center text-sm text-gray-600">
+          <p>© 2024 by Inqwise. Powered and secured by Wix</p>
+        </footer>
       </section>
+
+      {/* Blue gradient background at bottom */}
+      <div className="h-64 bg-gradient-to-b from-[#2B3990] to-[#1a2456]"></div>
     </main>
   );
 }
