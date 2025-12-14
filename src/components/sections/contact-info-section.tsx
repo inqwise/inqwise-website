@@ -5,9 +5,9 @@ const ContactInfoSection = () => {
   return (
     <section className="bg-white">
       <div className="container mx-auto px-10 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 border border-border-gray">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="p-10 text-center flex flex-col items-center">
+          <div className="p-10 text-center flex flex-col items-center bg-gray-50 shadow-lg hover:shadow-xl transition-shadow">
             <MapPin className="w-8 h-8 text-accent-red mb-6" aria-hidden="true" />
             <h3 className="font-service-title text-xl font-semibold text-accent-red mb-4">
               Address
@@ -17,7 +17,7 @@ const ContactInfoSection = () => {
             </p>
           </div>
           
-          <div className="p-10 text-center flex flex-col items-center border-t border-b md:border-y-0 md:border-l md:border-r border-border-gray">
+          <div className="p-10 text-center flex flex-col items-center bg-gray-50 shadow-lg hover:shadow-xl transition-shadow">
             <LinkIcon className="w-8 h-8 text-accent-red mb-6" aria-hidden="true" />
             <h3 className="font-service-title text-xl font-semibold text-accent-red mb-4">
               Contact channels
@@ -35,7 +35,7 @@ const ContactInfoSection = () => {
             </div>
           </div>
 
-          <div className="p-10 text-center flex flex-col items-center">
+          <div className="p-10 text-center flex flex-col items-center bg-gray-50 shadow-lg hover:shadow-xl transition-shadow">
             <Mail className="w-8 h-8 text-accent-red mb-6" aria-hidden="true" />
             <h3 className="font-service-title text-xl font-semibold text-accent-red mb-4">
               Email
