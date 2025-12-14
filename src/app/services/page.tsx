@@ -86,9 +86,6 @@ export default function ServicesPage() {
                   our services
                 </h1>
               </div>
-              <p className="text-lg text-[#DC2626] font-semibold" style={{ fontFamily: 'var(--font-body)' }}>
-                Our company can offer the following services:
-              </p>
             </div>
           </div>
         </section>

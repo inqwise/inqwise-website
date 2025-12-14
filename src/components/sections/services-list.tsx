@@ -37,9 +37,6 @@ const ServicesList = () => {
   return (
     <section className="bg-secondary py-20">
       <div className="container">
-        <p className="text-center font-medium text-lg text-[var(--color-accent-red)] mb-12" style={{ fontFamily: 'var(--font-navigation)' }}>
-          Our company can offer the following services:
-        </p>
         <div className="space-y-12">
           {serviceData.map((service, index) => (
             <div key={index} className="grid grid-cols-1 md:grid-cols-4 md:gap-x-8 gap-y-4 items-start">
