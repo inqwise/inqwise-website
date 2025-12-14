@@ -1,4 +1,5 @@
 import Navigation from "@/components/sections/navigation";
+import Footer from "@/components/sections/footer";
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Header: "our expertise" */}
           <div className="mb-16">
-            <h1 className="text-5xl font-bold mb-8">
+            <h1 className="text-5xl mb-8" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>
               our<span className="italic">expertise</span>
             </h1>
             <div className="relative w-64 h-52 mx-auto mb-8">
@@ -23,8 +24,8 @@ export default function AboutPage() {
 
           {/* DevFinOps Section */}
           <div className="mb-12 text-left w-full">
-            <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">DevFinOps</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <h2 className="text-2xl mb-6 text-[#2B3990]" style={{ fontFamily: 'var(--font-section-heading)', fontWeight: 600 }}>DevFinOps</h2>
+            <div className="space-y-4 leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-dark-gray)' }}>
               <p>
                 The DevFinOps methodology is built upon the following key principles: maximum automation, small 
                 development teams, and non-trivial architectural solutions. DevFinOps involves continuous interaction with the 
@@ -75,8 +76,8 @@ export default function AboutPage() {
 
           {/* Fintech Section */}
           <div className="mb-12 text-left w-full">
-            <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Fintech</h2>
-            <div className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl mb-6 text-[#2B3990]" style={{ fontFamily: 'var(--font-section-heading)', fontWeight: 600 }}>Fintech</h2>
+            <div className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-dark-gray)' }}>
               <p>
                 From 2015 to 2023, a product was developed: a multilevel computing system that integrates the roles of 
                 employer, accountant, and employee. The project operates online and has no analogs on the market. Data was 
@@ -90,8 +91,8 @@ export default function AboutPage() {
 
           {/* Video Ads Section */}
           <div className="mb-12 text-left w-full">
-            <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Video Ads</h2>
-            <div className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl mb-6 text-[#2B3990]" style={{ fontFamily: 'var(--font-section-heading)', fontWeight: 600 }}>Video Ads</h2>
+            <div className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-dark-gray)' }}>
               <h3 className="font-bold mb-2">Experience in Video Advertising:</h3>
               <p>
                 The project collects and analyzes data on viewed advertisements, with the capability to process over a million 
@@ -102,8 +103,8 @@ export default function AboutPage() {
 
           {/* Digital Surveys Section */}
           <div className="mb-12 text-left w-full">
-            <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Digital Surveys</h2>
-            <div className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl mb-6 text-[#2B3990]" style={{ fontFamily: 'var(--font-section-heading)', fontWeight: 600 }}>Digital Surveys</h2>
+            <div className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-dark-gray)' }}>
               <p>
                 As part of our digital survey system project, we developed a solution capable of processing large volumes of 
                 data. The platform efficiently collects and analyzes information from various types of surveys while supporting 
@@ -116,8 +117,8 @@ export default function AboutPage() {
 
           {/* Compliance and Security Section */}
           <div className="mb-12 text-left w-full">
-            <h2 className="text-2xl font-bold mb-6 text-[#2B3990]">Compliance and Security</h2>
-            <div className="text-gray-700 leading-relaxed">
+            <h2 className="text-2xl mb-6 text-[#2B3990]" style={{ fontFamily: 'var(--font-section-heading)', fontWeight: 600 }}>Compliance and Security</h2>
+            <div className="leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-dark-gray)' }}>
               <p>
                 At Inqwise, we strictly adhere to the Zero Trust concept, allowing us to ensure the highest level of security for all 
                 our clients. We follow leading industry standards, guaranteeing that your sensitive data is protected at all stages 
@@ -141,9 +142,9 @@ export default function AboutPage() {
                 <line x1="180" y1="100" x2="195" y2="120" stroke="black" strokeWidth="4"/>
               </svg>
             </div>
-            <h2 className="text-5xl font-bold mb-6">professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
+            <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
             <div className="bg-black text-white p-8 rounded-lg text-left">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 We possess a high level of expertise and extensive experience in the field of high technology, including architecture, 
                 design, construction, deployment, support, and system upgrades. We offer a full range of services, ensuring 
                 accountability, reliability, and stability at every stage of work. In our activities, we combine professionalism with 
@@ -162,9 +163,9 @@ export default function AboutPage() {
                 <circle cx="100" cy="35" r="8" fill="#DC2626"/>
               </svg>
             </div>
-            <h2 className="text-5xl font-bold mb-6">crea<span className="text-[#DC2626] italic">t</span>ivity</h2>
+            <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>crea<span className="text-[#DC2626] italic">t</span>ivity</h2>
             <div className="bg-[#2B3990] text-white p-8 rounded-lg text-left">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 An unconventional approach to solving the most challenging tasks. Development and search for alternative 
                 and non-obvious solutions to implement the most 'impossible' projects. Creation of innovative, unique, and high-tech 
                 projects that meet all the demands of our partners.
@@ -173,6 +174,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </main>
   );
 }
