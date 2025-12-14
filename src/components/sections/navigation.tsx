@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -9,7 +10,10 @@ export default function Navigation() {
   return (
     <nav className="w-full bg-white border-b border-[var(--color-border)]">
       <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="text-[var(--color-primary-blue)] font-semibold">INQWISE</Link>
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="Inqwise" width={40} height={40} />
+          <span className="text-[var(--color-primary-blue)] font-semibold text-lg">INQWISE</span>
+        </Link>
         <ul className="flex items-center gap-6 text-sm">
           <li>
             <Link 
