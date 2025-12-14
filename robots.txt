@@ -2,5 +2,30 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers - OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# AI Crawlers - Anthropic (Claude)
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# AI Crawlers - Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# AI Crawlers - Google
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://inqwise.com/sitemap.xml

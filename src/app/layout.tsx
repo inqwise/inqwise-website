@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
-// import VisualEditsWrapper from "@/components/VisualEditsWrapper";
+import { getOrganizationSchema, getWebsiteSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://inqwise.com'),
@@ -64,10 +63,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = getOrganizationSchema();
+  const websiteSchema = getWebsiteSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className="antialiased">
-        {/* <ErrorReporter /> */}
         <Script
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js"
           strategy="afterInteractive"
@@ -79,7 +90,6 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         {children}
-        {/* <VisualEditsWrapper /> */}
       </body>
     </html>
   );
