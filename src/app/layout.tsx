@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Inqwise - Technology Solutions",
   description: "Professional technology solutions with creativity and innovation",
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.svg',
   },
 };
 
