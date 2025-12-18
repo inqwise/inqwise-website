@@ -49,15 +49,12 @@ export default function AboutPage() {
         <section className="w-full py-16 px-4">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="mb-16">
-              <h1 className="text-5xl mb-12" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>
-                our<span className="italic">expertise</span>
-              </h1>
               <div className="relative w-full max-w-[1400px] mx-auto mb-8">
                 <Image
-                  src="/expertise-header.png"
+                  src="/star.png"
                   alt="Our Expertise"
                   width={1400}
-                  height={436}
+                  height={840}
                   className="w-full h-auto"
                   priority
                 />
