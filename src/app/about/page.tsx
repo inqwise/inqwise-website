@@ -209,12 +209,12 @@ export default function AboutPage() {
         {/* Creativity Section with Icon */}
         <section className="w-full bg-[#2B3990] text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <div className="relative w-full max-w-[1400px] mx-auto mb-8">
+            <div className="relative w-full max-w-[700px] mx-auto mb-8">
               <Image
-                src="/star.png"
+                src="/creativity-red2.png"
                 alt="Creativity"
-                width={1400}
-                height={840}
+                width={700}
+                height={420}
                 className="w-full h-auto"
               />
             </div>
