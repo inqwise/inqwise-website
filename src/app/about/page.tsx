@@ -194,7 +194,6 @@ export default function AboutPage() {
 
         <section className="w-full bg-black text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
             <div className="text-left">
               <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 We possess a high level of expertise and extensive experience in the field of high technology, including architecture, 
