@@ -180,16 +180,19 @@ export default function AboutPage() {
         </section>
 
         {/* Professionalism Section with Icon */}
+        <div className="flex flex-col items-center py-8">
+          <div className="relative w-64 h-32 mx-auto">
+            <Image
+              src="/professionalism.png"
+              alt="Professionalism"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
         <section className="w-full bg-black text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <div className="relative w-64 h-32 mx-auto mb-8">
-              <Image
-                src="/professionalism.png"
-                alt="Professionalism"
-                fill
-                className="object-contain"
-              />
-            </div>
             <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
             <div className="text-left">
               <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
