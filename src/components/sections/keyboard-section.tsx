@@ -1,11 +1,9 @@
-import Image from 'next/image';
-
 const KeyboardSection = () => {
   return (
     <section className="bg-white">
       <div className="container py-20">
         <div className="flex justify-center items-center">
-          <Image
+          <img
             src="/keyboard.png"
             alt="Apple wireless keyboard with INQWISE letters on keys"
             width={980}
@@ -16,6 +14,8 @@ const KeyboardSection = () => {
               maxWidth: '980px',
               height: 'auto',
             }}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
