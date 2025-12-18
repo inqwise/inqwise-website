@@ -1,13 +1,19 @@
 const ServicesHeader = () => {
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="container">
+      <div className="max-w-[1400px] mx-auto px-10">
         <div className="flex flex-col items-center text-center gap-8">
             <img
               src="/services-header.png"
               alt="Our Services title with decorative elements including a circuit board and heart"
-              width={500}
-              height={156}
+              width={1400}
+              height={437}
+              className="w-full h-auto"
+              style={{
+                width: '100%',
+                maxWidth: '1400px',
+                height: 'auto',
+              }}
               loading="eager"
               decoding="async"
             />
