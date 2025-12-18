@@ -213,12 +213,14 @@ export default function AboutPage() {
         {/* Creativity Section with Icon */}
         <section className="w-full bg-[#2B3990] text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <div className="relative w-64 h-32 mx-auto mb-8">
-              <svg viewBox="0 0 200 120" className="w-full h-full">
-                <path d="M 100 20 Q 80 60, 100 100 Q 120 60, 100 20" 
-                      fill="none" stroke="#DC2626" strokeWidth="4"/>
-                <circle cx="100" cy="35" r="8" fill="#DC2626"/>
-              </svg>
+            <div className="relative w-full max-w-[1400px] mx-auto mb-8">
+              <Image
+                src="/star.png"
+                alt="Creativity"
+                width={1400}
+                height={840}
+                className="w-full h-auto"
+              />
             </div>
             <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>crea<span className="text-[#DC2626] italic">t</span>ivity</h2>
             <div className="text-left">
