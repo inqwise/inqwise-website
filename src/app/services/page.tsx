@@ -1,5 +1,6 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
+import Image from "next/image";
 import { getWebPageSchema, getBreadcrumbSchema, getServiceSchema } from "@/lib/structured-data";
 import type { Metadata } from 'next';
 
@@ -77,15 +78,18 @@ export default function ServicesPage() {
       <main className="min-h-screen bg-white">
         <Navigation />
         
-        {/* Header with decorative circuit image */}
+        {/* Header with decorative image */}
         <section className="w-full py-16 px-4">
           <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
             <div className="mb-12">
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <h1 className="text-6xl" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>
-                  our services
-                </h1>
-              </div>
+              <Image 
+                src="/heart-red.png" 
+                alt="Our Services" 
+                width={700} 
+                height={350} 
+                className="w-auto h-auto"
+                priority
+              />
             </div>
           </div>
         </section>
