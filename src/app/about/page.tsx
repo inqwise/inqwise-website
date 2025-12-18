@@ -218,7 +218,6 @@ export default function AboutPage() {
                 className="w-full h-auto"
               />
             </div>
-            <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>crea<span className="text-[#DC2626] italic">t</span>ivity</h2>
             <div className="text-left">
               <p className="leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 An unconventional approach to solving the most challenging tasks. Development and search for alternative 
