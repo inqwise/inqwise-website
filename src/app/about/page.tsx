@@ -183,16 +183,12 @@ export default function AboutPage() {
         <section className="w-full bg-black text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4">
             <div className="relative w-64 h-32 mx-auto mb-8">
-              <svg viewBox="0 0 300 120" className="w-full h-full">
-                <circle cx="150" cy="30" r="20" fill="none" stroke="#DC2626" strokeWidth="4"/>
-                <circle cx="150" cy="30" r="8" fill="#DC2626"/>
-                <path d="M 150 50 Q 130 70, 120 100 M 150 50 Q 170 70, 180 100" 
-                      fill="none" stroke="white" strokeWidth="4"/>
-                <line x1="120" y1="100" x2="105" y2="120" stroke="white" strokeWidth="4"/>
-                <line x1="120" y1="100" x2="135" y2="120" stroke="white" strokeWidth="4"/>
-                <line x1="180" y1="100" x2="165" y2="120" stroke="white" strokeWidth="4"/>
-                <line x1="180" y1="100" x2="195" y2="120" stroke="white" strokeWidth="4"/>
-              </svg>
+              <Image
+                src="/professionalism.png"
+                alt="Professionalism"
+                fill
+                className="object-contain"
+              />
             </div>
             <h2 className="text-5xl mb-6" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>professi<span className="relative inline-block"><span className="text-[#DC2626] italic">o</span></span>nalism</h2>
             <div className="text-left">
