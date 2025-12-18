@@ -5,12 +5,15 @@ const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 })
  
-const eslintConfig = [
-    ...compat.config({
-      extends: ['next', 'next/typescript'],
-      plugins: ['import'],
-    }),
-  {
+  const eslintConfig = [
+      ...compat.config({
+        extends: ['next', 'next/typescript'],
+        plugins: ['import'],
+      }),
+    {
+      ignores: ['src/visual-edits/**/*'],
+    },
+    {
     rules: {
       'react/no-unescaped-entities': 'off',
       '@next/next/no-img-element': 'off',
