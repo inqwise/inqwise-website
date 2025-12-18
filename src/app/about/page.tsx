@@ -181,12 +181,12 @@ export default function AboutPage() {
 
         {/* Professionalism Section with Icon */}
         <div className="flex flex-col items-center py-8 px-4">
-          <div className="relative w-full max-w-[1400px] mx-auto">
+          <div className="relative w-full max-w-[700px] mx-auto">
             <Image
               src="/professionalism.png"
               alt="Professionalism"
-              width={1400}
-              height={700}
+              width={700}
+              height={350}
               className="w-full h-auto"
             />
           </div>
