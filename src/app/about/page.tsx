@@ -2,6 +2,7 @@ import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import { getWebPageSchema, getBreadcrumbSchema, getTechArticleSchema } from "@/lib/structured-data";
 import type { Metadata } from 'next';
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'About Us - Our Expertise',
@@ -48,15 +49,18 @@ export default function AboutPage() {
         <section className="w-full py-16 px-4">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="mb-16">
-              <h1 className="text-5xl mb-8" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>
+              <h1 className="text-5xl mb-12" style={{ fontFamily: 'var(--font-main-heading)', fontWeight: 700 }}>
                 our<span className="italic">expertise</span>
               </h1>
-              <div className="relative w-64 h-52 mx-auto mb-8">
-                <svg viewBox="0 0 200 150" className="w-full h-full">
-                  <polygon points="100,20 180,130 20,130" fill="none" stroke="black" strokeWidth="4"/>
-                  <line x1="50" y1="110" x2="150" y2="40" stroke="black" strokeWidth="4"/>
-                  <line x1="150" y1="110" x2="50" y2="40" stroke="black" strokeWidth="4"/>
-                </svg>
+              <div className="relative w-full max-w-[1400px] mx-auto mb-8">
+                <Image
+                  src="/expertise-header.png"
+                  alt="Our Expertise"
+                  width={1400}
+                  height={436}
+                  className="w-full h-auto"
+                  priority
+                />
               </div>
             </div>
           </div>
