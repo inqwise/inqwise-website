@@ -6,10 +6,10 @@ const compat = new FlatCompat({
 })
  
 const eslintConfig = [
-  ...compat.config({
-    extends: ['next'],
-    plugins: ['import'],
-  }),
+    ...compat.config({
+      extends: ['next', 'next/typescript'],
+      plugins: ['import'],
+    }),
   {
     rules: {
       'react/no-unescaped-entities': 'off',
