@@ -39,6 +39,37 @@ const safeLocalStorage = {
   }
 };
 
+/**
+ * Sanitize an image src value coming from an untrusted message.
+ * Only allows http/https URLs (including relative URLs resolved against the current origin).
+ * Returns null if the value is missing, cannot be parsed, or uses a disallowed scheme.
+ */
+const sanitizeImageSrc = (rawSrc: string | null | undefined): string | null => {
+  if (!rawSrc || typeof rawSrc !== "string") {
+    return null;
+  }
+
+  try {
+    // Support relative URLs by resolving against the current location when available.
+    const base =
+      typeof window !== "undefined" && window.location && window.location.href
+        ? window.location.href
+        : undefined;
+    const url = base ? new URL(rawSrc, base) : new URL(rawSrc);
+
+    const protocol = url.protocol.toLowerCase();
+    if (protocol === "http:" || protocol === "https:") {
+      return url.toString();
+    }
+
+    // Disallow all other schemes (javascript:, data:, file:, etc.).
+    return null;
+  } catch {
+    // Invalid URL
+    return null;
+  }
+};
+
 // Deduplicate helper for high-frequency traffic (HIT / FOCUS_MOVED / SCROLL)
 // -----------------------------------------------------------------------------
 let _orchidsLastMsg = "";
@@ -922,6 +953,11 @@ export default function HoverReceiver() {
         }
       } else if (e.data?.type === "ORCHIDS_IMAGE_UPDATE") {
         const { elementId, src, oldSrc } = e.data;
+        const safeSrc = sanitizeImageSrc(src);
+        if (!safeSrc) {
+          // Ignore messages that do not contain a valid, safe image URL.
+          return;
+        }
         let element: HTMLImageElement | null = null;
         const candidates = document.querySelectorAll(
           `[data-orchids-id="${elementId}"]`
@@ -952,10 +988,10 @@ export default function HoverReceiver() {
             imgEl.removeAttribute("srcset");
             imgEl.srcset = "";
 
-            imgEl.src = src;
+            imgEl.src = safeSrc;
 
             // Update baseline src so flush doesn't treat this as pending change
-            originalSrcRef.current = normalizeImageSrc(src);
+            originalSrcRef.current = normalizeImageSrc(safeSrc);
             focusedImageElementRef.current = imgEl;
 
             imgEl.onload = () => updateFocusBox();
