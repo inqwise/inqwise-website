@@ -50,7 +50,7 @@
         "atmn": "^0.0.24",
         "autumn-js": "^0.1.34",
         "bcrypt": "^6.0.0",
-        "better-auth": "^1.6.11",
+        "better-auth": "^1.6.23",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "cmdk": "^1.1.1",
