@@ -1,22 +1,11 @@
-import type { NextConfig } from "next";
-import path from "node:path";
+import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
+const pages = process.env.GITHUB_PAGES === 'true';
+const nextConfig: NextConfig = pages ? {
   output: 'export',
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-      {
-        protocol: 'http',
-        hostname: '**',
-      },
-    ],
-  },
-  outputFileTracingRoot: path.resolve(__dirname, '../../')
-};
+  trailingSlash: true,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  images: { unoptimized: true },
+} : {};
 
 export default nextConfig;

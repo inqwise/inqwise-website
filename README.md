@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inqwise Website
 
-## Getting Started
+[![Deploy website to GitHub Pages](https://github.com/inqwise/inqwise-website/actions/workflows/pages.yml/badge.svg?branch=master)](https://github.com/inqwise/inqwise-website/actions/workflows/pages.yml)
 
-First, run the development server:
+The source code for Inqwise’s website: a home for our open-source projects, libraries, utilities, and community.
 
-```bash
+**Website:** [inqwise.github.io/inqwise-website](https://inqwise.github.io/inqwise-website/)
+
+The GitHub Pages address becomes available after the first successful deployment.
+
+## About Inqwise
+
+Inqwise develops a growing collection of open-source projects, libraries, and utilities. We actively use these tools in our own projects and help friends and fellow developers put them to work in theirs.
+
+The website introduces our projects, highlights new work, shares articles, and helps people find documentation, ask questions, and get involved. This repository contains the website itself; each library and project has its own repository in the [Inqwise GitHub organization](https://github.com/inqwise).
+
+## Development
+
+Built with React, TypeScript, Vinext/Vite, and Tailwind CSS. Requires Node.js 22.13 or newer and npm.
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local address printed by the development server.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To build the static website and check types:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build:pages
+npx tsc --noEmit
+```
 
-## Learn More
+The static output is generated in `dist/client/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[The GitHub Pages workflow](.github/workflows/pages.yml) builds and deploys the website on pushes to `master`. It can also be run manually from the repository’s Actions tab.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** before the first deployment. The workflow automatically uses the configured Pages base path, including when a custom domain is configured.
 
-## Deploy on Vercel
+## Contributing and questions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ideas, feedback, documentation improvements, and code contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for website contribution guidance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions about using or integrating our libraries, [join the community on Discord](https://discord.gg/7RtfkfEPgk) or open an issue in the relevant project’s repository.
