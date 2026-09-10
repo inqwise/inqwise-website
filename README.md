@@ -4,9 +4,8 @@
 
 The source code for Inqwise’s website: a home for our open-source projects, libraries, utilities, and community.
 
-**Website:** [inqwise.github.io/inqwise-website](https://inqwise.github.io/inqwise-website/)
+**Website:** [inqwise.com](https://inqwise.com/)
 
-The GitHub Pages address becomes available after the first successful deployment.
 
 ## About Inqwise
 
@@ -38,7 +37,7 @@ The static output is generated in `dist/client/`.
 
 [The GitHub Pages workflow](.github/workflows/pages.yml) builds and deploys the website on pushes to `master`. It can also be run manually from the repository’s Actions tab.
 
-Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** before the first deployment. The workflow automatically uses the configured Pages base path, including when a custom domain is configured.
+Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** before the first deployment. The workflow automatically uses the configured Pages base path, including when a custom domain is configured. After adding or changing a custom domain, run the workflow again so image, stylesheet, and script URLs are rebuilt for the new address.
 
 ## Contributing and questions
 
