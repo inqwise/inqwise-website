@@ -1,3 +1,4 @@
+import TurndownService from 'turndown';
 import { spawnSync } from 'node:child_process';
 import { existsSync, writeFileSync, renameSync, readFileSync, readdirSync } from 'node:fs';
 
@@ -28,6 +29,29 @@ writeFileSync('dist/client/.nojekyll', '');
 // Generate discovery files from the finished export so published and removed
 // pages are reflected on every deployment. Error pages and noindex pages are omitted.
 const origin = 'https://inqwise.com';
+const markdown = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
+markdown.remove(['head', 'script', 'style', 'nav', 'header', 'footer', 'svg']);
+markdown.addRule('decorativeContent', {
+  filter: node => node.getAttribute('aria-hidden') === 'true' || node.getAttribute('class') === 'skip-link',
+  replacement: () => '',
+});
+markdown.addRule('inlineSpacing', {
+  filter: ['span', 'small'],
+  replacement: content => content ? ` ${content} ` : '',
+});
+markdown.addRule('accessibleLinks', {
+  filter: 'a',
+  replacement(content, node) {
+    const href = node.getAttribute('href');
+    const label = content.trim().replace(/\s+/g, ' ') || node.getAttribute('aria-label') || '';
+    if (!href || !label) return label;
+    const target = new URL(href, origin).href;
+    if (node.querySelector('h1,h2,h3,h4,h5,h6,p,div')) {
+      return `\n\n${content.trim()}\n\n[Read more](<${target}>)\n\n`;
+    }
+    return ` [${label}](<${target}>) `;
+  },
+});
 const escapeXml = value => value.replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
 }[char]));
@@ -41,6 +65,7 @@ function publicPages(directory, relative = '') {
     if (!entry.name.endsWith('.html') || /(?:^|\/)(?:404|500)(?:\/index)?\.html$/.test(route)) return [];
     const content = readFileSync(path, 'utf8');
     if (/<meta\b(?=[^>]*\bname=["'](?:robots|googlebot)["'])(?=[^>]*\bcontent=["'][^"']*\bnoindex\b)[^>]*>/i.test(content)) return [];
+    writeFileSync(path.replace(/\.html$/, '.md'), markdown.turndown(content) + '\n');
     const pathname = route === 'index.html' ? '' : route.replace(/(?:index)?\.html$/, '');
     return [`${origin}/${pathname.split('/').map(encodeURIComponent).join('/')}`];
   });

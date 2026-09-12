@@ -34,3 +34,30 @@ curl -fsS https://isitagentready.com/api/scan -H 'Content-Type: application/json
 Confirm the homepage returns the Link header, its target returns HTTP 200 and valid JSON, and `checks.discoverability.linkHeaders.status` is `"pass"`.
 
 References: [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288), [Cloudflare Response Header Transform Rules](https://developers.cloudflare.com/rules/transform/response-header-modification/).
+
+## Free-plan Markdown Worker
+
+`agent-worker.mjs` provides Markdown negotiation and the discovery Link header using a Worker route in front of GitHub Pages. It does not require the paid Markdown for Agents feature or Workers AI. Workers Free usage limits still apply.
+
+Every Pages build now exports `.md` companions from the public HTML pages (for example `/index.md`). Headings, text, and links come from the same rendered content; scripts, styles, navigation, and icons are removed. Publish that build before enabling the Worker.
+
+From the repository root, authenticate to the Cloudflare account containing `inqwise.com`, then deploy:
+
+```sh
+npx wrangler login
+npx wrangler deploy --config cloudflare/wrangler.jsonc
+```
+
+The route requires the existing Cloudflare-proxied DNS record. Keep GitHub Pages as the origin. Inspect existing Worker routes before deployment and avoid replacing any existing Worker on this route. No API token belongs in this repository. The Pages workflow does not deploy the Worker; deploy it separately when its code changes. Content-only updates require only the normal Pages deployment.
+
+The Worker adds `Vary: Accept`, respects explicit `q=0` and a higher HTML preference, supports GET/HEAD, and defaults to HTML. Non-page responses pass through. Markdown responses have `Content-Type: text/markdown; charset=utf-8` and are not stored in intermediary caches. If a Markdown companion is unavailable, the original page remains available as HTML. Token-count headers are omitted because no tokenizer is used.
+
+The Worker already adds the discovery Link header, so the separate Transform Rule is optional. To roll back, remove this Worker's route; the site continues directly from GitHub Pages.
+
+```sh
+node --test cloudflare/agent-worker.test.mjs
+curl -i -H 'Accept: text/markdown' https://inqwise.com/
+curl -I -H 'Accept: text/html' https://inqwise.com/
+```
+
+After deployment, run the scan above and check both `checks.contentAccessibility.markdownNegotiation.status` and `checks.discoverability.linkHeaders.status` are `"pass"`.
