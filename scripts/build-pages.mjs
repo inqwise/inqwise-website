@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync, writeFileSync, renameSync, readFileSync } from 'node:fs';
+import { existsSync, writeFileSync, renameSync, readFileSync, readdirSync } from 'node:fs';
 
 const result = spawnSync(process.execPath, ['node_modules/vinext/dist/cli.js', 'build'], {
   stdio: 'inherit',
@@ -24,3 +24,36 @@ for (const reference of references) {
   if (!existsSync(`dist/client${asset}`)) throw new Error(`Missing exported asset: ${reference}`);
 }
 writeFileSync('dist/client/.nojekyll', '');
+
+// Generate discovery files from the finished export so published and removed
+// pages are reflected on every deployment. Error pages and noindex pages are omitted.
+const origin = 'https://inqwise.com';
+const escapeXml = value => value.replace(/[&<>"']/g, char => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
+}[char]));
+function publicPages(directory, relative = '') {
+  return readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    const path = `${directory}/${entry.name}`;
+    const route = `${relative}${entry.name}`;
+    if (entry.isDirectory()) {
+      return entry.name.startsWith('_') ? [] : publicPages(path, `${route}/`);
+    }
+    if (!entry.name.endsWith('.html') || /(?:^|\/)(?:404|500)(?:\/index)?\.html$/.test(route)) return [];
+    const content = readFileSync(path, 'utf8');
+    if (/<meta\b(?=[^>]*\bname=["'](?:robots|googlebot)["'])(?=[^>]*\bcontent=["'][^"']*\bnoindex\b)[^>]*>/i.test(content)) return [];
+    const pathname = route === 'index.html' ? '' : route.replace(/(?:index)?\.html$/, '');
+    return [`${origin}/${pathname.split('/').map(encodeURIComponent).join('/')}`];
+  });
+}
+const urls = [...new Set(publicPages('dist/client'))].sort();
+if (!urls.length) throw new Error('No public pages found for sitemap');
+writeFileSync('dist/client/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url><loc>${escapeXml(url)}</loc></url>`).join('\n')}
+</urlset>
+`);
+writeFileSync('dist/client/robots.txt', `User-agent: *
+Allow: /
+
+Sitemap: ${origin}/sitemap.xml
+`);

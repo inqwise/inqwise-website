@@ -31,13 +31,17 @@ npm run build:pages
 npx tsc --noEmit
 ```
 
-The static output is generated in `dist/client/`.
+The static output is generated in `dist/client/`. Each build generates `sitemap.xml` from the exported public HTML pages and writes its canonical address into `robots.txt`. Adding or removing pages updates the sitemap on the next deployment; error pages and pages marked `noindex` are excluded.
 
 ## Deployment
 
 [The GitHub Pages workflow](.github/workflows/pages.yml) builds and deploys the website on pushes to `master`. It can also be run manually from the repository’s Actions tab.
 
 Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** before the first deployment. The workflow automatically uses the configured Pages base path, including when a custom domain is configured. After adding or changing a custom domain, run the workflow again so image, stylesheet, and script URLs are rebuilt for the new address.
+
+## Agent discovery
+
+`public/site-description.json` describes the website in JSON-LD. The homepage Link response header is configured at Cloudflare; see [setup and validation](cloudflare/README.md). Publishing this repository alone does not enable the response header.
 
 ## Contributing and questions
 

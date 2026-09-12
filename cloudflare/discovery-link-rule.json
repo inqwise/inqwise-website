@@ -1,0 +1,14 @@
+{
+  "description": "Link homepage to machine-readable site description",
+  "expression": "(http.host eq \"inqwise.com\" and http.request.uri.path eq \"/\")",
+  "action": "rewrite",
+  "action_parameters": {
+    "headers": {
+      "link": {
+        "operation": "add",
+        "value": "<https://inqwise.com/site-description.json>; rel=\"describedby\"; type=\"application/json\""
+      }
+    }
+  },
+  "enabled": true
+}
