@@ -16,7 +16,7 @@ export default function Contacts() {
       <nav aria-label="Main navigation">
         <a href={`${home}#projects`}>Projects</a>
         <a href={`${home}#participate`}>Community</a>
-        <a href={`${home}#story`}>About</a>
+        <a href={`${home}about/`}>About</a>
         <a href={`${home}contact/`} aria-current="page">Contact</a>
       </nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true" /><span>GitHub</span><ArrowUpRight aria-hidden="true" /></a>

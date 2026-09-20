@@ -60,3 +60,8 @@
 .contacts-note{max-width:760px;margin-top:36px}
 @media(max-width:1023px){.contacts-grid{grid-template-columns:1fr}.contact-card{padding:24px}}
 @media(max-width:760px){.contacts-page{padding-block:44px 56px}.contacts-intro{margin-bottom:28px}}
+
+.about-page{min-height:65vh}
+.about-page h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:500;line-height:1.2;letter-spacing:-.035em;margin-bottom:24px}
+.about-page .about-topics h2{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin:0 0 9px}
+.about-contact{padding-block:28px 48px}
