@@ -15,7 +15,7 @@ export default function Home() {
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header wrap">
       <a href="#" className="wordmark" aria-label="Inqwise home"><img className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a>
-      <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#participate">Community</a><a href="#story">About</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/contacts/`}>Contacts</a></nav>
+      <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#participate">Community</a><a href="#story">About</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/contact/`}>Contact</a></nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true"/><span>GitHub</span><ExternalArrow/></a>
     </header>
     <main id="main">

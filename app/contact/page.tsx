@@ -4,7 +4,7 @@ import { ArrowUpRight, CodeXml, Mail, MessageSquare } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact Inqwise — Questions, ideas, and contributions',
   description: 'Get in touch with Inqwise. Ask about our open-source projects, get help using a library, or share an idea with the community.',
-  alternates: { canonical: 'https://inqwise.com/contacts/' },
+  alternates: { canonical: 'https://inqwise.com/contact/' },
 };
 
 export default function Contacts() {
@@ -17,7 +17,7 @@ export default function Contacts() {
         <a href={`${home}#projects`}>Projects</a>
         <a href={`${home}#participate`}>Community</a>
         <a href={`${home}#story`}>About</a>
-        <a href={`${home}contacts/`} aria-current="page">Contacts</a>
+        <a href={`${home}contact/`} aria-current="page">Contact</a>
       </nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true" /><span>GitHub</span><ArrowUpRight aria-hidden="true" /></a>
     </header>
