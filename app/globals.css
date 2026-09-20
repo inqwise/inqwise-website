@@ -44,3 +44,19 @@
  .about-topics>div{border-top:1px solid var(--border);padding-top:18px}
 }
 @media(max-width:760px){.about-section{padding-block:40px}.about-section>.eyebrow{margin-bottom:18px}}
+
+.contacts-page{padding-block:72px 88px;min-height:65vh}
+.contacts-intro{max-width:720px;margin-bottom:42px}
+.contacts-intro h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;letter-spacing:-.045em;margin:18px 0 24px}
+.contacts-intro>p:last-child,.contacts-note{color:#626570;line-height:1.8;font-size:1.0625rem}
+.contacts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.contact-card{display:flex;flex-direction:column;align-items:flex-start;gap:18px;border:1px solid var(--border);border-radius:6px;padding:28px;min-width:0}
+.contact-card:hover{background:#eef4fc}
+.contact-card:focus-visible{outline:3px solid #24649a;outline-offset:4px}
+.contact-card h2{font-size:1.4rem;font-weight:600;letter-spacing:-.025em}
+.contact-card p{color:#626570;line-height:1.75}
+.contact-card .text-link{margin-top:auto;padding-top:12px;overflow-wrap:anywhere}
+.contact-card .text-link svg{flex-shrink:0}
+.contacts-note{max-width:760px;margin-top:36px}
+@media(max-width:1023px){.contacts-grid{grid-template-columns:1fr}.contact-card{padding:24px}}
+@media(max-width:760px){.contacts-page{padding-block:44px 56px}.contacts-intro{margin-bottom:28px}}
