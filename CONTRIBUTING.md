@@ -14,3 +14,5 @@ For website changes:
 For layout changes, check both narrow and wide screens, including the About Us breakpoint at 1024 pixels. Keep keyboard navigation, descriptive link labels, and readable text intact.
 
 Do not commit credentials, local environment files, generated builds, or dependency folders. Preserve the existing hosting association unless the maintainer explicitly changes the deployment target.
+
+Shared shadcn styles are kept in `app/styles/shadcn.css` with their MIT license so the build does not depend on the shadcn CLI. Update that stylesheet explicitly when adopting upstream styling changes.
