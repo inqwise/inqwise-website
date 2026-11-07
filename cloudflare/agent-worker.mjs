@@ -55,4 +55,5 @@ export async function handle(request, fetchOrigin = fetch) {
   return new Response(origin.body, { status: origin.status, statusText: origin.statusText, headers });
 }
 
-export default { fetch: request => handle(request) };
+const worker = { fetch: request => handle(request) };
+export default worker;

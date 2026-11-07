@@ -8,7 +8,7 @@ For website changes:
 
 1. Install dependencies with `npm ci` and start the site with `npm run dev`.
 2. Make a focused change, preserving the open-source and community emphasis.
-3. Run `npm run build` and `npx tsc --noEmit`.
+3. Run `npm run lint`, `npx tsc --noEmit`, and `npm run build:pages`. For Cloudflare-specific changes, also run `npm run build`.
 4. Describe what changed and how it was checked.
 
 For layout changes, check both narrow and wide screens, including the About Us breakpoint at 1024 pixels. Keep keyboard navigation, descriptive link labels, and readable text intact.

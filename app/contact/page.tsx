@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArrowUpRight, CodeXml, Mail, MessageSquare } from 'lucide-react';
 
@@ -12,7 +13,7 @@ export default function Contacts() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header wrap">
-      <a href={home} className="wordmark" aria-label="Inqwise home"><img className="brand-logo" src={`${home}inqwise-logo.png`} alt="" width="40" height="40" />inqwise</a>
+      <a href={home} className="wordmark" aria-label="Inqwise home"><Image unoptimized className="brand-logo" src={`${home}inqwise-logo.png`} alt="" width="40" height="40" />inqwise</a>
       <nav aria-label="Main navigation">
         <a href={`${home}#projects`}>Projects</a>
         <a href={`${home}#participate`}>Community</a>

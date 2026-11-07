@@ -30,6 +30,8 @@ jobs:
         run: npm ci
       - name: Check TypeScript
         run: npx tsc --noEmit
+      - name: Check lint
+        run: npm run lint
       - name: Build static website
         run: npm run build:pages
         env:

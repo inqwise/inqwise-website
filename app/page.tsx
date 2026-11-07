@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import AboutContent from '../components/about-content';
 import { ArrowUpRight, ArrowDown, CodeXml, Braces, MessageSquare, MoveRight } from 'lucide-react';
 
@@ -14,8 +15,8 @@ function ExternalArrow() { return <ArrowUpRight size={20} aria-hidden="true" />;
 export default function Home() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <header className="site-header wrap">
-      <a href="#" className="wordmark" aria-label="Inqwise home"><img className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a>
+    <header id="top" className="site-header wrap">
+      <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/`} className="wordmark" aria-label="Inqwise home"><Image unoptimized className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a>
       <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#participate">Community</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/about/`}>About</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/contact/`}>Contact</a></nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true"/><span>GitHub</span><ExternalArrow/></a>
     </header>
@@ -49,6 +50,6 @@ export default function Home() {
       <section className="participate-section" id="participate" aria-labelledby="participate-title"><div className="wrap participate-inner"><div><p className="eyebrow">03 / JOIN THE COMMUNITY</p><h2 id="participate-title">Join the community.<br/>Help shape what’s next.</h2><p>Explore the projects, try the libraries, and help shape what comes next. If you have questions, need help integrating a library, or want to share an idea, you’re welcome to ask.</p></div><div className="participate-links"><a href="https://github.com/inqwise"><CodeXml aria-hidden="true"/><span>Explore & contribute<small>Try a project or share feedback</small></span><ExternalArrow/></a><a href="https://discord.gg/7RtfkfEPgk"><MessageSquare aria-hidden="true"/><span>Join the conversation<small>Ask a question or get help with a library</small></span><ExternalArrow/></a><a href="mailto:contacts@inqwise.com"><span className="at-sign" aria-hidden="true">@</span><span>Say hello<small>contacts@inqwise.com</small></span><ExternalArrow/></a></div></div></section>
       <AboutContent />
     </main>
-    <footer className="wrap site-footer"><a href="#" className="wordmark" aria-label="Inqwise back to top"><img className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a><p>Open projects. An open invitation.</p><span>© 2026 Inqwise</span><a href="#" className="back-top">Back to top ↑</a></footer>
+    <footer className="wrap site-footer"><a href="#top" className="wordmark" aria-label="Inqwise back to top"><Image unoptimized className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a><p>Open projects. An open invitation.</p><span>© 2026 Inqwise</span><a href="#top" className="back-top">Back to top ↑</a></footer>
   </>;
 }

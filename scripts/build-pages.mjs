@@ -70,7 +70,7 @@ function publicPages(directory, relative = '') {
     return [`${origin}/${pathname.split('/').map(encodeURIComponent).join('/')}`];
   });
 }
-const urls = [...new Set(publicPages('dist/client'))].sort();
+const urls = [...new Set(publicPages('dist/client'))].sort((a, b) => a.localeCompare(b));
 if (!urls.length) throw new Error('No public pages found for sitemap');
 writeFileSync('dist/client/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
