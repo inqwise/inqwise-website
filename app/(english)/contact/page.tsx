@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { careersRoutes } from '../../../lib/careers';
 import type { Metadata } from 'next';
 import { ArrowUpRight, CodeXml, Mail, MessageSquare } from 'lucide-react';
 
@@ -18,6 +19,7 @@ export default function Contacts() {
         <a href={`${home}#projects`}>Projects</a>
         <a href={`${home}#participate`}>Community</a>
         <a href={`${home}about/`}>About</a>
+        <a href={`${home}${careersRoutes.en.path.slice(1)}`}>Careers</a>
         <a href={`${home}contact/`} aria-current="page">Contact</a>
       </nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true" /><span>GitHub</span><ArrowUpRight aria-hidden="true" /></a>

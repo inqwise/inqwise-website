@@ -1,0 +1,7 @@
+{
+  "careers": {
+    "en": { "path": "/careers/", "language": "en-US", "direction": "ltr", "openGraphLocale": "en_US" },
+    "he": { "path": "/he/careers/", "language": "he", "direction": "rtl", "openGraphLocale": "he_IL" },
+    "aliases": ["/en-us/careers/", "/about/careers/"]
+  }
+}

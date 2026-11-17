@@ -6,6 +6,24 @@
   "name": "Inqwise",
   "description": "Inqwise develops open-source projects, libraries, and utilities, uses them in its own projects, and welcomes questions and contributions.",
   "inLanguage": "en",
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "@id": "https://inqwise.com/careers/#webpage",
+      "url": "https://inqwise.com/careers/",
+      "name": "Careers at Inqwise",
+      "description": "Project work, open-source contribution paths, and a contact for career inquiries. No specific paid positions are advertised on this page.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://inqwise.com/he/careers/#webpage",
+      "url": "https://inqwise.com/he/careers/",
+      "name": "קריירה ב־Inqwise",
+      "description": "פרויקטים, דרכים לתרום לקוד פתוח וכתובת לבירור על עבודה. בעמוד הזה לא מפורסמות משרות ספציפיות בתשלום.",
+      "inLanguage": "he"
+    }
+  ],
   "publisher": {
     "@type": "Organization",
     "name": "Inqwise",

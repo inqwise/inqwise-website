@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import AboutContent from '../components/about-content';
+import { careersRoutes } from '../../lib/careers';
+import AboutContent from '../../components/about-content';
 import { ArrowUpRight, ArrowDown, CodeXml, Braces, MessageSquare, MoveRight } from 'lucide-react';
 
 const libraries = [
@@ -17,7 +18,7 @@ export default function Home() {
     <a className="skip-link" href="#main">Skip to content</a>
     <header id="top" className="site-header wrap">
       <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/`} className="wordmark" aria-label="Inqwise home"><Image unoptimized className="brand-logo" src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/inqwise-logo.png`} alt="" width="40" height="40"/>inqwise</a>
-      <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#participate">Community</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/about/`}>About</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/contact/`}>Contact</a></nav>
+      <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#participate">Community</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/about/`}>About</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${careersRoutes.en.path}`}>Careers</a><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/contact/`}>Contact</a></nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true"/><span>GitHub</span><ExternalArrow/></a>
     </header>
     <main id="main">

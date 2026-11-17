@@ -52,6 +52,8 @@ The route requires the existing Cloudflare-proxied DNS record. Keep GitHub Pages
 
 The Worker adds `Vary: Accept`, respects explicit `q=0` and a higher HTML preference, supports GET/HEAD, and defaults to HTML. Non-page responses pass through. Markdown responses have `Content-Type: text/markdown; charset=utf-8` and are not stored in intermediary caches. If a Markdown companion is unavailable, the original page remains available as HTML. Token-count headers are omitted because no tokenizer is used.
 
+The Worker also sends 301 redirects for careers aliases listed in `lib/page-routes.json`, preserving query strings. Both `/en-us/careers/` and `/about/careers/` redirect to `/careers/`, including requests without a trailing slash. `/he/careers/` remains a separate Hebrew page. Deploy the updated Pages build before deploying this Worker change. On GitHub Pages alone, alias pages still render the shared English content and point to `/careers/` as canonical.
+
 The Worker already adds the discovery Link header, so the separate Transform Rule is optional. To roll back, remove this Worker's route; the site continues directly from GitHub Pages.
 
 ```sh

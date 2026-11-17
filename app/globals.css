@@ -65,3 +65,58 @@
 .about-page h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:500;line-height:1.2;letter-spacing:-.035em;margin-bottom:24px}
 .about-page .about-topics h2{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin:0 0 9px}
 .about-contact{padding-block:28px 48px}
+
+/* Careers uses the same typography, blue accents, and open layouts as the main site. */
+.careers-intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:64px;align-items:start;padding-block:72px}
+.careers-intro h1{font-size:clamp(2.5rem,4.5vw,4rem);font-weight:550;line-height:1.08;letter-spacing:-.05em}
+.careers-intro h1 span{color:var(--primary)}
+.careers-lead{font-size:1.0625rem;line-height:1.8;color:var(--muted-foreground);margin:26px 0;max-width:53ch}
+.careers-status{padding:30px;background:#eef4fc;border:1px solid #d8e5f4;border-radius:6px}
+.careers-status .eyebrow{color:#4d627c;margin-bottom:20px}
+.careers-status h2,.careers-agent-note h2{font-size:1.5rem;font-weight:550;line-height:1.3;letter-spacing:-.03em}
+.careers-status p:not(.eyebrow){color:#526279;line-height:1.8;margin-top:16px}
+.careers-status .button{margin-top:24px}
+.careers-work{border-top:1px solid var(--border)}
+.careers-section-note{max-width:41ch;font-size:.9375rem;line-height:1.75;color:var(--muted-foreground)}
+.careers-projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.careers-project{display:flex;flex-direction:column;border-top:1px solid var(--border);padding-top:24px;min-width:0}
+.careers-project h3{font-size:1.375rem;font-weight:550;letter-spacing:-.03em;line-height:1.3;margin-bottom:16px}
+.careers-project p,.careers-columns p:not(.eyebrow),.careers-checklist{color:var(--muted-foreground);line-height:1.8}
+.careers-first-step{margin-block:24px}
+.careers-first-step h4{font-size:.875rem;font-weight:600;margin-bottom:8px}
+.careers-project>.text-link{margin-top:auto;white-space:normal}
+.careers-practice{background:#f5f6f8;border-block:1px solid var(--border);padding-block:64px}
+.careers-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:start}
+.careers-columns h2{font-size:clamp(2rem,2.7vw,2.5rem);font-weight:500;line-height:1.2;letter-spacing:-.045em;margin-bottom:24px}
+.careers-columns .eyebrow{color:var(--muted-foreground);margin-bottom:18px}
+.careers-steps{margin:0;padding-inline-start:25px;display:grid;gap:24px}
+.careers-steps li{padding-inline-start:10px}
+.careers-steps li::marker{font-family:var(--font-geist-mono),monospace;color:var(--primary)}
+.careers-steps h3{font-size:1.125rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em}
+.careers-checklist{padding-inline-start:22px;margin-block:20px}
+.careers-checklist li+li{margin-top:8px}
+.careers-columns .button{margin-top:24px}
+.careers-inline-link{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.careers-inline-link:hover{color:var(--primary)}
+.careers-agent-note{border:1px solid var(--border);border-radius:6px;padding:30px;min-width:0}
+.careers-agent-note h2{font-size:1.5rem;margin-bottom:20px}
+.careers-agent-note dl{margin:0 0 20px}
+.careers-agent-note dl>div{border-top:1px solid var(--border);padding-block:15px}
+.careers-agent-note dt{font-size:.875rem;font-weight:600;margin-bottom:6px}
+.careers-agent-note dd{margin:0;color:var(--muted-foreground);font-size:.9375rem;line-height:1.75}
+.careers-agent-note>p:last-child{font-size:.9375rem}
+@media(min-width:761px) and (max-width:1100px){.site-header{gap:24px}.site-header nav{gap:20px}.header-github{padding-left:20px}.careers-intro,.careers-columns{gap:36px}.careers-projects{gap:24px}}
+@media(max-width:760px){.site-header nav{gap:12px;flex-wrap:wrap}.careers-intro,.careers-columns,.careers-projects{grid-template-columns:1fr;gap:32px}.careers-intro{padding-block:44px}.careers-intro h1{font-size:clamp(2.5rem,9vw,3.5rem)}.careers-status,.careers-agent-note{padding:24px}.careers-status .button{width:100%;white-space:normal;gap:12px}.careers-section-note{max-width:55ch}.careers-practice{padding-block:44px}.careers-project{padding-top:22px}.careers-columns h2 br{display:none}.careers-columns h2{font-size:2rem}}
+
+.careers-languages{display:flex;justify-content:flex-end;gap:18px;padding-block-start:24px;font-size:.875rem}
+.careers-languages a[aria-current="page"]{color:var(--primary);text-decoration:underline;text-underline-offset:5px}
+.careers-site .careers-intro{padding-block-start:36px}
+.careers-site .site-header nav{margin-left:0;margin-inline-start:auto}
+.careers-site .header-github{border-left:0;border-inline-start:1px solid var(--border);padding-left:0;padding-inline-start:28px}
+.careers-site .header-github{margin-left:0}
+.careers-site .site-footer>span{margin-left:0;margin-inline-start:auto}
+.careers-site .skip-link{left:auto;inset-inline-start:20px}
+.careers-site[dir="rtl"] .eyebrow,.careers-site[dir="rtl"] h1,.careers-site[dir="rtl"] h2,.careers-site[dir="rtl"] h3{letter-spacing:normal}
+.careers-site[dir="rtl"] .wordmark{letter-spacing:-1.4px}
+@media(min-width:761px) and (max-width:1100px){.careers-site .header-github{padding-inline-start:20px}}
+@media(max-width:760px){.careers-site .header-github{border:0;padding:0;margin-inline-start:auto}.careers-site .site-footer>span{margin-inline-start:0}.careers-languages{padding-block-start:20px}.careers-site .careers-intro{padding-block-start:28px}}

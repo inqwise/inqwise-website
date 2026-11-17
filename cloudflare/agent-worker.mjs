@@ -1,3 +1,5 @@
+import routes from '../lib/page-routes.json' with { type: 'json' };
+
 const discovery = '<https://inqwise.com/site-description.json>; rel="describedby"; type="application/json"';
 
 export function wantsMarkdown(accept = '') {
@@ -22,6 +24,10 @@ function varyAccept(headers) {
 export async function handle(request, fetchOrigin = fetch) {
   const url = new URL(request.url);
   if (url.hostname !== 'inqwise.com' || !['GET', 'HEAD'].includes(request.method)) return fetchOrigin(request);
+  if (routes.careers.aliases.includes(`${url.pathname.replace(/\/$/, '')}/`)) {
+    url.pathname = routes.careers.en.path;
+    return Response.redirect(url.href, 301);
+  }
   const markdown = wantsMarkdown(request.headers.get('accept') || '');
   const originHeaders = new Headers(request.headers);
   if (markdown) {

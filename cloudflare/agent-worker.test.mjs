@@ -7,6 +7,24 @@ test('only explicit acceptable Markdown opts in', () => {
   for (const value of ['text/markdown', 'text/markdown, text/html', 'TEXT/MARKDOWN; q=0.9, text/html;q=0.5']) assert.equal(wantsMarkdown(value), true, value);
 });
 const page = () => new Response('<h1>Inqwise</h1>', { headers: { 'content-type': 'text/html', etag: 'html-tag', vary: 'Accept-Encoding', link: '</style.css>; rel="preload"', 'content-security-policy': "default-src 'self'" } });
+test('career aliases redirect before origin fetch and preserve query strings', async () => {
+  for (const path of ['/en-us/careers', '/en-us/careers/', '/about/careers', '/about/careers/']) {
+    for (const method of ['GET', 'HEAD']) {
+      const result = await handle(new Request(`https://inqwise.com${path}?source=profile`, { method, headers: { accept: 'text/markdown' } }), () => { throw new Error('Alias should not fetch the origin'); });
+      assert.equal(result.status, 301);
+      assert.equal(result.headers.get('location'), 'https://inqwise.com/careers/?source=profile');
+    }
+  }
+});
+test('preferred careers pages and non-page requests are not redirected', async () => {
+  for (const url of ['https://inqwise.com/careers/', 'https://inqwise.com/he/careers/', 'https://inqwise.com/about/careers-guide/', 'https://example.com/en-us/careers/']) {
+    const result = await handle(new Request(url), async () => page());
+    assert.equal(result.status, 200);
+    assert.equal(result.headers.get('location'), null);
+  }
+  const result = await handle(new Request('https://inqwise.com/en-us/careers/', { method: 'POST' }), async () => new Response('original'));
+  assert.equal(await result.text(), 'original');
+});
 test('browser HTML is preserved with discovery and Vary headers', async () => {
   const result = await handle(new Request('https://inqwise.com/'), async () => page());
   assert.equal(await result.text(), '<h1>Inqwise</h1>');

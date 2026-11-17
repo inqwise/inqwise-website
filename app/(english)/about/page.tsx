@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { careersRoutes } from '../../../lib/careers';
 import type { Metadata } from 'next';
 import { ArrowUpRight, CodeXml } from 'lucide-react';
-import AboutContent from '../../components/about-content';
+import AboutContent from '../../../components/about-content';
 
 export const metadata: Metadata = {
   title: 'About Inqwise — Open software, shared knowledge',
@@ -19,6 +20,7 @@ export default function About() {
         <a href={`${home}#projects`}>Projects</a>
         <a href={`${home}#participate`}>Community</a>
         <a href={`${home}about/`} aria-current="page">About</a>
+        <a href={`${home}${careersRoutes.en.path.slice(1)}`}>Careers</a>
         <a href={`${home}contact/`}>Contact</a>
       </nav>
       <a className="header-github" href="https://github.com/inqwise"><CodeXml size={18} aria-hidden="true" /><span>GitHub</span><ArrowUpRight aria-hidden="true" /></a>

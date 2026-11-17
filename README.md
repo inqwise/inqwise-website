@@ -43,6 +43,16 @@ Set **Settings → Pages → Build and deployment → Source** to **GitHub Actio
 
 `public/site-description.json` describes the website in JSON-LD. The homepage Link response header is configured at Cloudflare; see [setup and validation](cloudflare/README.md). Publishing this repository alone does not enable the response header.
 
+## Careers content and languages
+
+Careers uses one shared layout in `components/careers-page.tsx`. Edit English copy in `content/careers/en.ts` and Hebrew copy in `content/careers/he.ts`; both follow `content/careers/types.ts`. URL choices and aliases live in `lib/page-routes.json`, with metadata helpers in `lib/careers.ts`.
+
+The preferred URLs are `/careers/` (English) and `/he/careers/` (Hebrew). `/en-us/careers/` and `/about/careers/` are aliases: static hosting renders the shared English page with its preferred canonical URL, while the Cloudflare Worker sends a permanent redirect when deployed. Aliases are excluded from the sitemap. The language switch, `hreflang`, page metadata, and structured data use the preferred URLs.
+
+English and Hebrew use separate root layouts in the `(english)` and `(hebrew)` route groups so the exported HTML has the correct document language and direction. These group names do not appear in URLs. To add a translation, add its content, register its route and metadata, and add its page under a layout with the appropriate language and direction. To add an alias, add a small page re-export and register its path in the route configuration. Keep `public/site-description.json` in sync when preferred URLs change.
+
+After building, check the exported careers pages with `node scripts/check-careers-export.mjs`. For a build with `NEXT_PUBLIC_BASE_PATH`, pass the same variable to this check. Redirect tests run with `node --test cloudflare/agent-worker.test.mjs`.
+
 ## Contributing and questions
 
 Ideas, feedback, documentation improvements, and code contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for website contribution guidance.
