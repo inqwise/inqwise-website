@@ -10,9 +10,11 @@ export interface CareersContent {
   eyebrow: string;
   headline: [string, string];
   lead: string;
+  context: { intro: string; about: string; between: string; linkedIn: string; end: string };
   seeWork: string;
   statusEyebrow: string;
   statusTitle: string;
+  jobsLink: string;
   statusParagraphs: string[];
   askPaid: string;
   workEyebrow: string;

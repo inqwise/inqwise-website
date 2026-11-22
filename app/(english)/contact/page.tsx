@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { inqwiseLinkedIn } from '../../../lib/site-links';
 import { careersRoutes } from '../../../lib/careers';
 import type { Metadata } from 'next';
 import { ArrowUpRight, CodeXml, Mail, MessageSquare } from 'lucide-react';
@@ -47,7 +48,7 @@ export default function Contacts() {
           <span className="text-link">Explore our repositories <ArrowUpRight aria-hidden="true" /></span>
         </a>
       </div>
-      <p className="contacts-note">We actively use these tools in our own projects and help fellow developers put them to work. Your questions and feedback help us improve them.</p>
+      <p className="contacts-note">We actively use these tools in our own projects and help fellow developers put them to work. Your questions and feedback help us improve them. For employment or contract inquiries, visit our <a className="inline-link" href={`${home}${careersRoutes.en.path.slice(1)}`}>careers page</a>. You can also follow our <a className="inline-link" href={inqwiseLinkedIn}>updates on LinkedIn</a>.</p>
     </main>
     <footer className="wrap site-footer"><a href={home} className="wordmark">inqwise</a><p>Open projects. An open invitation.</p><span>© 2026 Inqwise</span><a href={home} className="back-top">Back to home</a></footer>
   </>;
