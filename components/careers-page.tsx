@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { inqwiseLinkedIn, inqwiseLinkedInJobs } from '../lib/site-links';
 import { ArrowDown, ArrowUpRight, CodeXml } from 'lucide-react';
 import { careerEmail, careerInquiry, careersContent, careersRoutes, siteOrigin, type CareersLocale } from '../lib/careers';
 
@@ -40,11 +41,12 @@ export default function CareersPage({ locale }: { locale: CareersLocale }) {
           <p className="eyebrow">{c.eyebrow}</p>
           <h1 id="careers-title">{c.headline[0]}<br /><span>{c.headline[1]}</span></h1>
           <p className="careers-lead">{c.lead}</p>
+          <p className="careers-lead">{c.context.intro}<a className="careers-inline-link" href={`${home}about/`}>{c.context.about}</a>{c.context.between}<a className="careers-inline-link" href={inqwiseLinkedIn}>{c.context.linkedIn}</a>{c.context.end}</p>
           <a className="text-link" href="#project-work">{c.seeWork} <ArrowDown size={18} aria-hidden="true" /></a>
         </div>
         <aside className="careers-status" aria-labelledby="opportunities-title">
           <p className="eyebrow">{c.statusEyebrow}</p><h2 id="opportunities-title">{c.statusTitle}</h2>
-          {c.statusParagraphs.map(p => <p key={p}>{p}</p>)}
+          {c.statusParagraphs.map((p, index) => <p key={p}>{index === 0 && <><a className="careers-inline-link" href={inqwiseLinkedInJobs}>{c.jobsLink}</a>. </>}{p}</p>)}
           <a className="button primary" href={careerInquiry}>{c.askPaid} <ArrowUpRight size={18} aria-hidden="true" /></a>
         </aside>
       </section>

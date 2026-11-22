@@ -96,8 +96,8 @@
 .careers-checklist{padding-inline-start:22px;margin-block:20px}
 .careers-checklist li+li{margin-top:8px}
 .careers-columns .button{margin-top:24px}
-.careers-inline-link{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
-.careers-inline-link:hover{color:var(--primary)}
+.inline-link,.careers-inline-link{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.inline-link:hover,.careers-inline-link:hover{color:var(--primary)}
 .careers-agent-note{border:1px solid var(--border);border-radius:6px;padding:30px;min-width:0}
 .careers-agent-note h2{font-size:1.5rem;margin-bottom:20px}
 .careers-agent-note dl{margin:0 0 20px}

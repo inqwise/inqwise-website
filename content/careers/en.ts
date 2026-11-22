@@ -46,10 +46,12 @@ export const en: CareersContent = {
   ],
   "lead": "We build open-source libraries, data tools, and survey software. If you like tracing a bug, making an API easier to use, or explaining how a system works, explore the projects behind Inqwise.",
   "seeWork": "See the work",
+  context: { intro: 'Learn more ', about: 'about Inqwise', between: ' and follow our ', linkedIn: 'updates on LinkedIn', end: '.' },
   "statusEyebrow": "OPPORTUNITIES AT A GLANCE",
   "statusTitle": "Looking for a paid role?",
+  jobsLink: 'Check current openings on LinkedIn',
   "statusParagraphs": [
-    "No specific paid positions are advertised on this page. To ask about employment or contract work, email us with the kind of work you’re looking for.",
+    "To ask about employment or contract work, email us with the kind of work you’re looking for.",
     "Inqwise is an independent open-source initiative led by its main maintainer. Contributing to a public project is separate from applying for paid work."
   ],
   "askPaid": "Ask about paid opportunities",
